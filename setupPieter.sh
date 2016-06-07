@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo apt update
 sudo apt install -f -y
 sudo apt install git intltool -y
 
@@ -17,11 +18,11 @@ read -p "Druk op een toets om verder te gaan."
 echo " "
 echo "Disabling Mouse Acceleration"
 sudo rm /usr/share/X11/xorg.conf.d/90-mouse.conf
-echo Section "InputClass" | sudo tee --append /usr/share/X11/xorg.conf.d/90-mouse.conf > /dev/null
-echo    Identifier "mouse" | sudo tee --append /usr/share/X11/xorg.conf.d/90-mouse.conf > /dev/null
-echo    MatchIsPointer "on" | sudo tee --append /usr/share/X11/xorg.conf.d/90-mouse.conf > /dev/null
-echo    Option "AccelerationProfile" "-1" | sudo tee --append /usr/share/X11/xorg.conf.d/90-mouse.conf > /dev/null
-echo    Option "AccelerationScheme" "none" | sudo tee --append /usr/share/X11/xorg.conf.d/90-mouse.conf > /dev/null
+echo Section \"InputClass\" | sudo tee --append /usr/share/X11/xorg.conf.d/90-mouse.conf > /dev/null
+echo    Identifier \"mouse\" | sudo tee --append /usr/share/X11/xorg.conf.d/90-mouse.conf > /dev/null
+echo    MatchIsPointer \"on\" | sudo tee --append /usr/share/X11/xorg.conf.d/90-mouse.conf > /dev/null
+echo    Option \"AccelerationProfile\" \"-1\" | sudo tee --append /usr/share/X11/xorg.conf.d/90-mouse.conf > /dev/null
+echo    Option \"AccelerationScheme\" \"none\" | sudo tee --append /usr/share/X11/xorg.conf.d/90-mouse.conf > /dev/null
 echo EndSection | sudo tee --append /usr/share/X11/xorg.conf.d/90-mouse.conf > /dev/null
 
 #Spotify
@@ -34,12 +35,15 @@ sudo apt install spotify -y
 sudo apt purge gnome-mahjongg gnome-sudoku aisleriot gnome-mines rhythmbox -y && sudo apt-get autoremove -y
 
 #Install vivaldi
-#sudo apt install libappindicator1 libcurl3
-#wget https://downloads.vivaldi.com/stable/vivaldi-stable_1.2.490.39-1_amd64.deb
-#sudo dpkg -i vivaldi-stable_1.2.490.39-1_amd64.deb
+sudo apt install libappindicator1 libcurl3
+wget https://downloads.vivaldi.com/stable/vivaldi-stable_1.2.490.39-1_amd64.deb
+sudo dpkg -i vivaldi-stable_1.2.490.39-1_amd64.deb
 
 #Install chromium
 sudo apt install chromium-browser
 
 cd ~
 rm ~/tmp -R
+
+sudo apt upgrade
+sudo apt dist-upgrade
