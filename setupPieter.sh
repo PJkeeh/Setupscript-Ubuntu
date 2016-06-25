@@ -19,6 +19,11 @@ echo EndSection | sudo tee --append /usr/share/X11/xorg.conf.d/90-mouse.conf > /
 mkdir ~/tmp
 cd ~/tmp
 
+#Budgie desktop
+sudo add-apt-repository ppa:budgie-remix/ppa
+sudo apt-get update
+sudo apt-get install budgie-desktop
+
 #Install Visual Studio Code
 wget https://az764295.vo.msecnd.net/stable/def9e32467ad6e4f48787d38caf190acbfee5880/vscode-amd64.deb
 sudo dpkg -i vscode-amd64.deb
