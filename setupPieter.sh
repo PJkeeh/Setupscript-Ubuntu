@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt update
 sudo apt install -f -y
-sudo apt install git intltool -y
+sudo apt install git intltool subversion -y
 
 #FIXES
 #Disable Mouse Acceleration
